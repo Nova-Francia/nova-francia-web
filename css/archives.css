@@ -1,0 +1,24 @@
+#II, #III, #IV {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#II {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/img/screenshot/nouvelle_france.jpg");
+}
+
+#III {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/img/screenshot/acceuil.jpg");
+}
+
+#IV {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/img/screenshot/cielbrume2.jpg");
+}

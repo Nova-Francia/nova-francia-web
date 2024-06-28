@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  nova-francia:
+    image: nginx:latest
+    volumes:
+      - .:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"
+

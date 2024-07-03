@@ -22,3 +22,8 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("/img/screenshot/cielbrume2.jpg");
 }
+
+#biblio {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("/img/screenshot/biblio2.jpg");
+}

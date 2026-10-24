@@ -1,6 +1,6 @@
 #mainIndex{
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-    url("/img/screenshot/entre.jpg");
+    url("/optimized-images/screenshot/entre.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,7 +31,7 @@
 }
 
 #mod{
-    background-image: url("/img/screenshot/jardin.jpg");
+    background-image: url("/optimized-images/screenshot/jardin.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

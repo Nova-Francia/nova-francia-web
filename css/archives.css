@@ -10,20 +10,20 @@
 
 #II {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("/img/screenshot/nouvelle_france.jpg");
+    url("/optimized-images/screenshot/nouvelle_france.webp");
 }
 
 #III {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/img/screenshot/acceuil.jpg");
+    url("/optimized-images/screenshot/acceuil.webp");
 }
 
 #IV {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("/img/screenshot/cielbrume2.jpg");
+    url("/optimized-images/screenshot/cielbrume2.webp");
 }
 
 #biblio {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url("/img/screenshot/biblio2.jpg");
+    url("/optimized-images/screenshot/biblio2.webp");
 }

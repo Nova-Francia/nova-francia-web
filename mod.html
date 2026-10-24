@@ -26,7 +26,7 @@
         <div><h1><a href='/'>Accueil</a></h1></div>
         <div><h1><a href='/map.html'>Carte Interactive</a></h1></div>
         <div><h1><a href='/mod.html'>Modlist</a></h1></div>
-        <a href="/"><img src='/img/logo2.png' alt='Nova Francia'></a>
+        <a href="/"><img src='/optimized-images/logo2.webp' alt='Nova Francia'></a>
         <div><h1><a href='/colonies.html'>Colonies</a></h1></div>
         <div><h1><a href='/commerce.html'>Commerces</a></h1></div>
         <div><h1><a href='/galerie.html'>Galerie</a></h1></div>
@@ -34,9 +34,9 @@
 
     <div class='menuContainer'>
 
-        <nav role='navigation'>
+        <nav role='navigation' aria-label='Navigation principale'>
             <div id='menuToggle'>
-                <input type='checkbox' id='burger'/>
+                <button type='button' class='menu-button' aria-expanded='false' aria-controls='menu' aria-label='Menu de navigation'></button>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -47,7 +47,7 @@
                     <li><a href='/colonies.html'>Colonies</a></li>
                     <li><a href='/commerce.html'>Commerces</a></li>
                     <li><a href='/galerie.html'>Galerie</a></li>
-                    <li><a href="/"><img src='/img/logo2.png' alt='Nova Francia'></a></li>
+                    <li><a href="/"><img src='/optimized-images/logo2.webp' alt='Nova Francia'></a></li>
                 </ul>
             </div>
         </nav>
@@ -110,14 +110,14 @@
             </div>
         </div>
     </div>
-    <div class="list fade-in">
-        <div class="flex-row maskNext" id="Génération">
+    <details class="list fade-in" open>
+        <summary class="flex-row" id="Génération">
 
             <span class="separateur"> </span>
             <h2 class="underline">Génération</h2>
             <span class="separateur"> </span>
 
-        </div>
+        </summary>
         <div>
             <div>
                 <div>
@@ -205,15 +205,15 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="list fade-in">
-        <div class="flex-row maskNext" id="Utilitaires">
+    </details>
+    <details class="list fade-in" open>
+        <summary class="flex-row" id="Utilitaires">
 
             <span class="separateur"> </span>
             <h2 class="underline">Utilitaires</h2>
             <span class="separateur"> </span>
 
-        </div>
+        </summary>
         <div>
             <div>
                 <div>
@@ -370,15 +370,15 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="list fade-in">
-        <div class="flex-row maskNext" id="Outils">
+    </details>
+    <details class="list fade-in" open>
+        <summary class="flex-row" id="Outils">
 
             <span class="separateur"> </span>
             <h2 class="underline">Outils</h2>
             <span class="separateur"> </span>
 
-        </div>
+        </summary>
         <div>
             <div>
                 <div>
@@ -487,15 +487,15 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="list fade-in">
+    </details>
+    <details class="list fade-in" open>
         <span class="separateur" id="Datapacks"> </span>
-        <div class="maskNext">
+        <summary>
             <h2>De plus, <span class="nova-francia">Nova Francia </span><span class="underline"> utilise plusieurs datapacks</span>,
                 listés
                 ci-dessous:
             </h2>
-        </div>
+        </summary>
         <div>
             <div>
                 <div>
@@ -538,7 +538,7 @@
                 </p>
             </div>
         </div>
-    </div>
+    </details>
     <div class='fade-in'>
         <span class='separateur'></span>
         <h3>Finalement, les <span class='important'>suggestions</span> de nouveaux mods et datapacks sont acceptés.
@@ -546,7 +546,7 @@
     </div>
 </div>
 <footer>
-    <img src='/img/logo2.png' alt='Nova Francia'>
+    <img src='/optimized-images/logo2.webp' alt='Nova Francia'>
     <div>
         <p>© 2021 Nova Francia - Tous droits réservés | Réalisé par LuckMk1</p>
         <p style="text-align: center">Accès aux <a href="/archives" class='underline important'>archives</a></p>

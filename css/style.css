@@ -1,7 +1,30 @@
+:root{
+    --color-brand: #7e201b;
+    --color-brand-hover: #d2352d;
+    --color-accent: #d2352d;
+    --color-accent-dark: #a82a24;
+    --color-text: #1f2328;
+    --color-surface: #f5f6fa;
+    --color-focus: #f4c542;
+    --content-width: 75rem;
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
+    --space-4: 4rem;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
 html{
     width: 100%;
     height: 100%;
     font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-surface);
     overflow-wrap: break-word;
     word-wrap: break-word;
     overflow-x: hidden;
@@ -9,14 +32,71 @@ html{
 }
 body{
     height: 100%;
-    width: 100vw;
+    width: 100%;
     margin: 0;
+    line-height: 1.5;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+a{
+    -webkit-tap-highlight-color: transparent;
+}
+
+a{
+    text-decoration: unset;
+    color: unset;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible{
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
 }
 
 .heightMask{
     height: 0 !important;
     overflow: hidden;
     transition: height 1s ease;
+}
+
+details{
+    margin: var(--space-2) auto;
+    width: min(100% - var(--space-2), var(--content-width));
+    background: transparent;
+}
+
+details > summary{
+    cursor: pointer;
+    padding: var(--space-2);
+    font-weight: 700;
+}
+
+details > summary:focus-visible{
+    outline: 3px solid var(--color-focus);
+    outline-offset: -3px;
+}
+
+.js .fade-in{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 250ms ease-in, transform 250ms ease-in;
+}
+
+.js .fade-in.appear{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js details > .details-content{
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 500ms ease;
 }
 
 .logoContainer{
@@ -53,7 +133,7 @@ ul.no-bullets {
 }
 
 header{
-    background-color: #7e201b;
+    background-color: var(--color-brand);
     height: 100px;
     color: white;
     display: flex;
@@ -85,7 +165,7 @@ header a{
     align-items: center;
 }
 header a:hover{
-    background-color: #d2352d;
+    background-color: var(--color-brand-hover);
     transition: all 0.3s;
 }
 
@@ -94,7 +174,7 @@ header *{
 }
 
 footer{
-    background-color: #7e201b;
+    background-color: var(--color-brand);
     height: 50px;
     color: white;
     display: flex;
@@ -122,7 +202,7 @@ footer p{
     margin: 2.5em auto;
     width: 25%;
     height: 1px;
-    background-color: #d2352d;
+    background-color: var(--color-accent);
 }
 
 .flex-row, .row{
@@ -165,17 +245,19 @@ footer p{
     border-radius: 20px;
     width: 94%;
     height: 91%;
-    background-color: #F5F6FA;
+    background-color: var(--color-surface);
 }
 
 
 #full-screen {
-     color: white;
+    color: white;
+    border: 0;
     position: absolute;
     bottom: 60px;
     right: 15px;
     padding: 5px 10px;
     font-size: 1.5em;
+    font-family: inherit;
     background: rgba(255,255,255,0.25);
     border-radius: 10px;
     transition: padding 0.1s ease, font-size 0.1s ease, bottom 1s ease;
@@ -223,15 +305,22 @@ nav img{
     user-select: none;
 }
 
-#menuToggle input
+#menuToggle .menu-button
 {
-    display: flex;
+    display: block;
     width: 40px;
     height: 32px;
     position: absolute;
     cursor: pointer;
-    opacity: 0;
     z-index: 2;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+#menuToggle .menu-button:focus-visible{
+    outline: 3px solid var(--color-focus);
+    outline-offset: 3px;
 }
 
 #menuToggle span
@@ -261,19 +350,19 @@ nav img{
 }
 
 
-#menuToggle input:checked ~ span
+#menuToggle .menu-button[aria-expanded="true"] ~ span
 {
     opacity: 1;
     transform: rotate(45deg) translate(-3px, -1px);
     background: #ffffff;
 }
-#menuToggle input:checked ~ span:nth-last-child(3)
+#menuToggle .menu-button[aria-expanded="true"] ~ span:nth-last-child(3)
 {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2)
+#menuToggle .menu-button[aria-expanded="true"] ~ span:nth-last-child(2)
 {
     transform: rotate(-45deg) translate(0, -1px);
 }
@@ -286,7 +375,7 @@ nav img{
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
     margin: 100vh 0 0 -60px;
     padding: 100px 50px 50px;
-    background-color: #7e201b;
+    background-color: var(--color-brand);
     -webkit-font-smoothing: antialiased;
     transform-origin: 0 0;
     transform: translate(-100%, 0);
@@ -300,20 +389,9 @@ nav img{
     transition-delay: 2s;
 }
 
-#menuToggle input:checked ~ ul
+#menuToggle .menu-button[aria-expanded="true"] ~ ul
 {
     transform: none;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 250ms ease-in;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .paragraph{
@@ -322,11 +400,11 @@ nav img{
 }
 
 .nova-francia{
-    color:#591713;
+    color: #591713;
     font-weight: bold;
 }
 .important{
-    color: #d2352d;
+    color: var(--color-accent);
     font-weight: bolder;
 }
 
@@ -342,12 +420,8 @@ nav img{
     right: 0;
     width: 0;
     height: 2px;
-    background-color: #a82a24;
+    background-color: var(--color-accent-dark);
     transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.maskNext{
-    cursor: pointer;
 }
 
 .center{
@@ -396,17 +470,12 @@ nav img{
     text-shadow: 1px 1px 1px black, 1px 1px 3px black;
 }
 
-a{
-    text-decoration: unset;
-    color: unset;
-}
-
 article, aside > *{
     width: 100%;
 }
 
 article{
-    width: 40%
+    width: 40%;
 }
 
 aside{
@@ -472,6 +541,30 @@ aside img:hover{
     transition: height 1s ease;
 }
 
+.iframe-fullscreen{
+    height: 100% !important;
+}
+
+.fade-in,
+.fade-in.appear {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html{
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 @media (max-width: 900px) {
     article, aside{
         margin: auto;
@@ -507,6 +600,9 @@ aside img:hover{
     .text-aligned-right{
         flex-direction: column-reverse !important;
         text-align-last: unset;
+    }
+    header{
+        min-height: 65px;
     }
 }
 @media (max-width: 600px) {

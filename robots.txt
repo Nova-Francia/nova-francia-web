@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://nova-francia.espie.dev/sitemap.xml

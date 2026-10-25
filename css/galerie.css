@@ -85,6 +85,7 @@ a{
     align-items: center;
     justify-content: center;
     pointer-events: none;
+    z-index: 10;
 }
 [id^="lightbox-"]:target {
     opacity: 1;
@@ -95,8 +96,12 @@ a{
 }
 [id^="lightbox-"] .container {
     max-width: 90%;
+    max-height: 95vh;
     position: relative;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
 }
 [id^="lightbox-"] .container:hover > a.close {
     opacity: 1;
@@ -153,12 +158,54 @@ a{
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0, 0);
-    opacity: 0;
+    transform: scale(1, 1);
+    opacity: 1;
     transform-origin: right top;
     text-decoration: none;
     color: #fff;
 }
 [id^="lightbox-"] a.close::after {
     content: "X";
+}
+
+.gallery-open {
+    overflow: hidden;
+}
+
+[id^="lightbox-"] button {
+    border: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    cursor: pointer;
+    font: inherit;
+}
+
+[id^="lightbox-"] button:disabled {
+    cursor: default;
+    opacity: 0.4;
+}
+
+.gallery-controls {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.gallery-controls button {
+    pointer-events: auto;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+@media (hover: none) {
+    .gallery > div > a {
+        opacity: 1;
+        padding: 1rem;
+        font-size: 1.25em;
+    }
 }

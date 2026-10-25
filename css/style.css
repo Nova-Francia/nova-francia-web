@@ -95,8 +95,8 @@ details > summary:focus-visible{
 
 .js details > .details-content{
     overflow: hidden;
-    max-height: 0;
-    transition: max-height 500ms ease;
+    height: 0;
+    transition: height 500ms ease;
 }
 
 .logoContainer{

@@ -140,9 +140,15 @@ if (fullscreen) {
         const iframe = document.getElementById("mainIframe");
         const isFullscreen = this.classList.toggle("fullscreen");
 
-        header.classList.toggle("heightMask", isFullscreen);
-        footer.classList.toggle("heightMask", isFullscreen);
-        iframe.classList.toggle("iframe-fullscreen", isFullscreen);
+        if (header) {
+            header.classList.toggle("heightMask", isFullscreen);
+        }
+        if (footer) {
+            footer.classList.toggle("heightMask", isFullscreen);
+        }
+        if (iframe) {
+            iframe.classList.toggle("iframe-fullscreen", isFullscreen);
+        }
         this.setAttribute("aria-label", isFullscreen ? "Quitter le plein écran" : "Afficher la carte en plein écran");
     });
 }
